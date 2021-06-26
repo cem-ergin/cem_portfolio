@@ -2,12 +2,9 @@ import 'package:cem_portfolio/helper/size_helper.dart';
 import 'package:cem_portfolio/providers/navbar_provider.dart';
 import 'package:cem_portfolio/providers/theme_provider.dart';
 import 'package:cem_portfolio/styles/styles.dart';
-import 'package:clipboard/clipboard.dart';
-import 'package:flash/flash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 SizeHelper _sizeHelper = SizeHelper();
 
@@ -44,6 +41,9 @@ class _MyWorksPageState extends State<MyWorksPage> {
         horizontal: _sizeHelper.size.width * 0.125,
       ),
       children: [
+        SizedBox(
+          height: _sizeHelper.size.height * 0.02,
+        ),
         Text(
           "My Works",
           style: MyStyles(context).aboutTitle,
@@ -159,7 +159,7 @@ class _MyWorksPageState extends State<MyWorksPage> {
           color: _themeProvider.accentColor(_navbarProvider.navbarIndex),
         ),
         SizedBox(
-          height: _sizeHelper.size.height * 0.01,
+          height: _sizeHelper.size.height * 0.02,
         ),
       ],
     );

@@ -63,15 +63,15 @@ class _InitialPageState extends State<InitialPage> {
                 child: Container(
                   color:
                       _themeProvider.primaryColor(_navbarProvider.navbarIndex),
-                  child: MyWorksPage(),
-                  // child: AnimatedSwitcher(
-                  //   duration: kAnimationDuration,
-                  //   child: _navbarProvider.navbarIndex == 0
-                  //       ? HomePage()
-                  //       : _navbarProvider.navbarIndex == 1
-                  //           ? AboutPage()
-                  //           : MyWorksPage(),
-                  // ),
+                  // child: MyWorksPage(),
+                  child: AnimatedSwitcher(
+                    duration: kAnimationDuration,
+                    child: _navbarProvider.navbarIndex == 0
+                        ? HomePage()
+                        : _navbarProvider.navbarIndex == 1
+                            ? AboutPage()
+                            : MyWorksPage(),
+                  ),
                 ),
               ),
             ],

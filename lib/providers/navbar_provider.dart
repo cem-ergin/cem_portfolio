@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NavbarProvider with ChangeNotifier {
-  int _navbarIndex = 2;
+  int _navbarIndex = 0;
   int get navbarIndex => _navbarIndex;
   set navbarIndex(int navbarIndex) {
     _navbarIndex = _navbarIndex == navbarIndex ? 0 : navbarIndex;
