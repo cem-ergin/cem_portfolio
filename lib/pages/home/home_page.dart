@@ -4,11 +4,12 @@ import 'package:cem_portfolio/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 SizeHelper _sizeHelper = SizeHelper();
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -80,8 +81,9 @@ class HomePage extends StatelessWidget {
             ),
             child: GestureDetector(
               onTap: () async {
-                if (await canLaunch("https://github.com/cem-ergin")) {
-                  await launch("https://github.com/cem-ergin");
+                if (await canLaunch(
+                    "https://github.com/cem-ergin/cem_portfolio")) {
+                  await launch("https://github.com/cem-ergin/cem_portfolio");
                 } else {
                   throw 'Could not launch github';
                 }

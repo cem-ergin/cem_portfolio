@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'IamCEM',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: Color(0xff0d1137),
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
 }
 
 class InitialPage extends StatefulWidget {
-  InitialPage({Key key}) : super(key: key);
+  InitialPage({Key? key}) : super(key: key);
 
   @override
   _InitialPageState createState() => _InitialPageState();

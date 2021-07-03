@@ -3,32 +3,35 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class SizeHelper {
-  static final SizeHelper _instance = SizeHelper._internal();
+  static SizeHelper? _instance = SizeHelper._internal();
 
   factory SizeHelper() {
-    return _instance;
+    if (_instance == null) {
+      _instance = SizeHelper._internal();
+    }
+    return _instance!;
   }
 
   SizeHelper._internal() {
     print("SizeHelper oluşturuldu");
   }
 
-  BuildContext _context;
-  BuildContext get context => _context;
+  BuildContext? _context;
+  BuildContext get context => _context!;
   set context(BuildContext context) {
     _context = context;
     print("SizeHelper context setted");
   }
 
-  EdgeInsets _padding;
-  EdgeInsets get padding => _padding;
+  EdgeInsets? _padding;
+  EdgeInsets get padding => _padding!;
   set padding(EdgeInsets ei) {
     _padding = ei;
     print("SizeHelper padding setted");
   }
 
-  Size _size;
-  Size get size => _size;
+  Size? _size;
+  Size get size => _size!;
 
   void setSize(Size size) {
     _size = size;
@@ -71,35 +74,35 @@ class SizeHelper {
 
 class XdHelper {
   static double getScaledFontSize({
-    @required Size size,
-    @required double fontSize,
-    @required Size xdScreenSize,
+    @required Size? size,
+    @required double? fontSize,
+    @required Size? xdScreenSize,
   }) {
-    double sizeRatio = sqrt(pow(size.height, 2) + pow(size.width, 2));
+    double sizeRatio = sqrt(pow(size!.height, 2) + pow(size.width, 2));
     double xdRatio =
-        sqrt(pow(xdScreenSize.height, 2) + pow(xdScreenSize.width, 2));
-    return fontSize * sizeRatio / xdRatio;
+        sqrt(pow(xdScreenSize!.height, 2) + pow(xdScreenSize.width, 2));
+    return fontSize! * sizeRatio / xdRatio;
   }
 
   static double getScaledDouble({
-    @required Size size,
-    @required double xdDouble,
-    @required Size xdScreenSize,
+    @required Size? size,
+    @required double? xdDouble,
+    @required Size? xdScreenSize,
   }) {
-    double sizeRatio = sqrt(pow(size.height, 2) + pow(size.width, 2));
+    double sizeRatio = sqrt(pow(size!.height, 2) + pow(size.width, 2));
     double xdRatio =
-        sqrt(pow(xdScreenSize.height, 2) + pow(xdScreenSize.width, 2));
-    return xdDouble * sizeRatio / xdRatio;
+        sqrt(pow(xdScreenSize!.height, 2) + pow(xdScreenSize.width, 2));
+    return xdDouble! * sizeRatio / xdRatio;
   }
 
   static Size getScaledSize({
-    @required Size size,
-    @required Size xdContainerSize,
-    @required Size xdScreenSize,
+    @required Size? size,
+    @required Size? xdContainerSize,
+    @required Size? xdScreenSize,
   }) {
     // sqrt(pow(xdScreenSize.height, 2) + pow(xdScreenSize.width, 2));
     return Size(
-      (xdContainerSize.width * size.width) / (xdScreenSize.width),
+      (xdContainerSize!.width * size!.width) / (xdScreenSize!.width),
       (xdContainerSize.height * size.height) / (xdScreenSize.height),
     );
   }

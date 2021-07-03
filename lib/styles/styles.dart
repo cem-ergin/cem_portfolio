@@ -30,12 +30,12 @@ class MyStyles {
         color: Provider.of<ThemeProvider>(context, listen: false).accentColor(
             Provider.of<NavbarProvider>(context, listen: false).navbarIndex),
 
-        fontSize: Theme.of(context).textTheme.headline4.fontSize,
+        fontSize: Theme.of(context).textTheme.headline4?.fontSize,
       );
   TextStyle get aboutHeader => TextStyle(
         // color: Provider.of<ThemeProvider>(context, listen: false).accentColor(
         //     Provider.of<NavbarProvider>(context, listen: false).navbarIndex),
         color: Colors.black,
-        fontSize: Theme.of(context).textTheme.headline6.fontSize,
+        fontSize: Theme.of(context).textTheme.headline6?.fontSize,
       );
 }

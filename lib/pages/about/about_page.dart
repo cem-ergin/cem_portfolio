@@ -8,29 +8,28 @@ import 'package:clipboard/clipboard.dart';
 import 'package:flash/flash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 SizeHelper _sizeHelper = SizeHelper();
 
 class AboutPage extends StatefulWidget {
-  const AboutPage({Key key}) : super(key: key);
+  const AboutPage({Key? key}) : super(key: key);
 
   @override
   _AboutPageState createState() => _AboutPageState();
 }
 
 class _AboutPageState extends State<AboutPage> {
-  ScrollController _scrollController;
+  ScrollController? _scrollController;
   @override
   void initState() {
     super.initState();
     final _navbarProvider = Provider.of<NavbarProvider>(context, listen: false);
     _scrollController = ScrollController();
-    _scrollController.addListener(() {
+    _scrollController!.addListener(() {
       _navbarProvider.showNavbar =
-          _scrollController.position.userScrollDirection ==
+          _scrollController?.position.userScrollDirection ==
               ScrollDirection.forward;
     });
   }

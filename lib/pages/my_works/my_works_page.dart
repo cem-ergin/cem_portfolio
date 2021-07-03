@@ -9,22 +9,22 @@ import 'package:provider/provider.dart';
 SizeHelper _sizeHelper = SizeHelper();
 
 class MyWorksPage extends StatefulWidget {
-  const MyWorksPage({Key key}) : super(key: key);
+  const MyWorksPage({Key? key}) : super(key: key);
 
   @override
   _MyWorksPageState createState() => _MyWorksPageState();
 }
 
 class _MyWorksPageState extends State<MyWorksPage> {
-  ScrollController _scrollController;
+  ScrollController? _scrollController;
   @override
   void initState() {
     super.initState();
     final _navbarProvider = Provider.of<NavbarProvider>(context, listen: false);
     _scrollController = ScrollController();
-    _scrollController.addListener(() {
+    _scrollController!.addListener(() {
       _navbarProvider.showNavbar =
-          _scrollController.position.userScrollDirection ==
+          _scrollController!.position.userScrollDirection ==
               ScrollDirection.forward;
     });
   }
@@ -167,10 +167,10 @@ class _MyWorksPageState extends State<MyWorksPage> {
 
   Column _buildProjectColumn(
     BuildContext context, {
-    @required String project,
-    @required String role,
-    @required String responsibilities,
-    @required String technology,
+    @required String? project,
+    @required String? role,
+    @required String? responsibilities,
+    @required String? technology,
   }) {
     return Column(
       children: [
